@@ -1,8 +1,13 @@
 const express = require('express');
+const connectDB = require('./config/db');
 
 const app = express();
 
-app.get('/', (req, res) => res.json({ msg: 'Welcome to my Server' }));
+// Connect Database
+connectDB();
+
+// Init middlewere
+app.use(express.json({ extended: false }));
 
 // Routes
 app.use('/api/users', require('./routes/users'));

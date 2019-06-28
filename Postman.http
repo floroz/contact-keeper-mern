@@ -1,15 +1,55 @@
-# POST http://localhost:5000/api/users
 
-# GET http://localhost:5000/api/auth
+POST http://localhost:5000/api/users
+Content-Type: application/json
 
-# POST http://localhost:5000/api/auth
+{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+  "password": "123456"
+}
 
-# GET http://localhost:5000/api/contacts
+###
+GET http://localhost:5000/api/auth
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxNjdkNjdhYjBkOTYxNGE1N2RmNTA0In0sImlhdCI6MTU2MTc1NjMxNCwiZXhwIjoxNTYyMTE2MzE0fQ.Y-jvwiupOwJW26_1ZCq8_1TBO-HkYWO39pfwfdZ8Rjg
 
-# POST http://localhost:5000/api/contacts
+###
+POST http://localhost:5000/api/auth
+Content-Type: application/json
 
-# PUT http://localhost:5000/api/contacts/
+{
+  "email": "johndoe@gmail.com",
+  "password": "123456"
+}
 
-# DELETE http://localhost:5000/api/contacts/
+
+###
+GET http://localhost:5000/api/contacts
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxNjdkNjdhYjBkOTYxNGE1N2RmNTA0In0sImlhdCI6MTU2MTc1NjMxNCwiZXhwIjoxNTYyMTE2MzE0fQ.Y-jvwiupOwJW26_1ZCq8_1TBO-HkYWO39pfwfdZ8Rjg
+
+###
+POST http://localhost:5000/api/contacts
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxNjdkNjdhYjBkOTYxNGE1N2RmNTA0In0sImlhdCI6MTU2MTc1NjMxNCwiZXhwIjoxNTYyMTE2MzE0fQ.Y-jvwiupOwJW26_1ZCq8_1TBO-HkYWO39pfwfdZ8Rjg
+
+{
+  "name": "Ted Johnson",
+  "email": "ted@gmail.com",
+  "phone": "+2342432443"
+}
+
+
+###
+PUT http://localhost:5000/api/contacts/5d16865d558c5c17dad88fee
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxNjdkNjdhYjBkOTYxNGE1N2RmNTA0In0sImlhdCI6MTU2MTc1NjMxNCwiZXhwIjoxNTYyMTE2MzE0fQ.Y-jvwiupOwJW26_1ZCq8_1TBO-HkYWO39pfwfdZ8Rjg
+
+{
+  "phone": "+432222222"
+}
+
+
+###
+DELETE http://localhost:5000/api/contacts/5d168621558c5c17dad88fed
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQxNjdkNjdhYjBkOTYxNGE1N2RmNTA0In0sImlhdCI6MTU2MTc1NjMxNCwiZXhwIjoxNTYyMTE2MzE0fQ.Y-jvwiupOwJW26_1ZCq8_1TBO-HkYWO39pfwfdZ8Rjg
 
 
